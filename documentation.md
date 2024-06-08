@@ -1,7 +1,5 @@
 # ARMS IT E-Invoicing Integration API Documentation
 
-[[_TOC_]]
-
 ## Base URL
 All requests should be made to the following base URL:
 ```
@@ -299,16 +297,16 @@ In addition to the common request body fields, the following fields are specific
 ## Diagrams
 
 ### Authentication Flow
-:::mermaid
+```mermaid
 graph TD;
     A[Client] -->|Sends Request with API Key| B[API Gateway]
     B -->|Validates API Key| C[ARMS IT E-Invoicing API]
     C -->|Returns Response| B
     B -->|Returns Response| A
-:::
+```
 
 ### Invoice Creation Flow
-:::mermaid
+```mermaid
 sequenceDiagram
     participant Client
     participant API_Gateway
@@ -320,4 +318,4 @@ sequenceDiagram
  API_Gateway->>E_Invoice_API: Validate and Forward Request
     E_Invoice_API-->>API_Gateway: 200 OK / 400 Bad Request / 401 Unauthorized / 500 Internal Server Error
     API_Gateway-->>Client: Forward Response
-:::
+```
